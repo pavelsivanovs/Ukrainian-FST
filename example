@@ -1,0 +1,31 @@
+digraph A {
+rankdir = LR;
+node [shape=circle,style=filled] 0
+node [shape=circle,style=filled] 1
+node [shape=circle,style=filled] 2
+node [shape=circle,style=filled] 3
+node [shape=circle,style=filled] 4
+node [shape=circle,style=filled] 5
+node [shape=circle,style=filled] 6
+node [shape=circle,style=filled] 7
+node [shape=circle,style=filled] 8
+node [shape=circle,style=filled] 9
+node [shape=circle,style=filled] 10
+node [shape=doublecircle,style=filled] 11
+node [shape=doublecircle,style=filled] 12
+0 -> 7 [label="h "];
+0 -> 5 [label="m "];
+0 -> 3 [label="d "];
+0 -> 1 [label="c "];
+1 -> 2 [label="a "];
+2 -> 11 [label="t "];
+3 -> 4 [label="o "];
+4 -> 11 [label="g "];
+5 -> 6 [label="o "];
+6 -> 9 [label="u "];
+7 -> 8 [label="o "];
+8 -> 9 [label="r "];
+9 -> 10 [label="s "];
+10 -> 11 [label="e "];
+11 -> 12 [label="s "];
+}

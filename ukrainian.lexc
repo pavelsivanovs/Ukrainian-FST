@@ -1,0 +1,15 @@
+Multichar_Symbols +Noun +Masc +Fem +Neut +Sg +Pl +Nom +Gen +Dat +Acc +Instr +Loc +Voc +Idecl +IIdecl +IIIdecl +IVdecl
+
+LEXICON Root
+Noun ;
+Verb ;
+
+LEXICON Noun
+перемог Ninf;
+
+LEXICON Verb
+
+
+LEXICON Ninf
++N+Sg:^а #;
++N+Pl:^и #;
