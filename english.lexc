@@ -1,0 +1,30 @@
+Multichar_Symbols +N +V +PastPart +Past +PresPart +3P +Sg +Pl
+
+! define Lexicon;
+
+! define EInsertion [..] -> e || s | z | x | c h | s h _ "^" s;
+
+! define Grammar Lexicon .o. EInsertion;
+
+! regex Grammar;
+
+LEXICON Root
+Noun ;
+Verb ;
+
+LEXICON Noun
+cat Ninf;
+
+LEXICON Verb
+watch Vinf;
+
+LEXICON Ninf
++N+Sg:0 #;
++N+Pl:^s #;
+
+LEXICON Vinf
++V:0 #;
++V+3P+Sg:^s #;
++V+Past:^ed #;
++V+PastPart:^ed #;
++V+PresPart:^ing #;
