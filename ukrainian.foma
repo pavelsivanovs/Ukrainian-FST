@@ -2,3 +2,38 @@ read lexc ukrainian.lexc
 
 define Lexicon;
 
+# In the singular Dative and Locative cases г, к, х before -і ending change into з, ц, с
+define HConstBeforeI  г -> з || _ "^" і;
+define KConstBeforeI  к -> ц || _ "^" і;
+define KhConstBeforeI х -> с || _ "^" і;
+
+# Soft group
+# Change the ending for soft group words with stems ending on й
+define SoftChangeEndingGenDatLoc й "@P.SOFT.ON@" "^" і -> "@P.SOFT.ON@" "^" ї;
+define SoftChangeEndingIns й "@P.SOFT.ON@" "^" ею -> "@P.SOFT.ON@" "^" єю;
+define SoftChangeEndingVoc й "@P.SOFT.ON@" "^" е -> "@P.SOFT.ON@" "^" є;
+# Remove the ь or й before the ending
+define SoftRemoveSoftSign й -> 0 || _ "@P.SOFT.ON@" "^" *;
+
+# In plural Genitive case, if there are two consonants before ending, then the vowel o appear between them
+define InsertVowel [..] -> о || м _ к "@P.PLGEN.ON@" "^";
+
+# In plural Genitive case the last vowel changes from о to і
+define LastOToI о -> і || _ ? "@P.PLGEN.ON@";
+
+define Cleanup "^" -> 0;
+
+define Grammar 
+        Lexicon .o.
+        HConstBeforeI .o.
+        KConstBeforeI .o.
+        KhConstBeforeI .o.
+        SoftChangeEndingGenDatLoc .o.
+        SoftChangeEndingIns .o.
+        SoftChangeEndingVoc .o.
+        SoftRemoveSoftSign .o.
+        LastOToI .o.
+        InsertVowel .o.
+        Cleanup;
+
+regex Grammar;

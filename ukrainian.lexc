@@ -1,15 +1,104 @@
-Multichar_Symbols +Noun +Masc +Fem +Neut +Sg +Pl +Nom +Gen +Dat +Acc +Instr +Loc +Voc +Idecl +IIdecl +IIIdecl +IVdecl
+Multichar_Symbols +Noun +Masc +Fem +Neut 
+    +Sg +Pl 
+    +Nom +Gen +Dat +Acc +Ins +Loc +Voc 
+    +IDecl ! +IIDecl +IIIDecl +IVDecl
+    +Hard +Soft +Mixed +Spec
+    @P.SOFT.ON@ @P.PLGEN.ON@
 
 LEXICON Root
 Noun ;
-Verb ;
 
 LEXICON Noun
-перемог Ninf;
+! First Declension
+! Hard group
+думк IDeclHard;
+голов IDeclHard;
+особ IDeclHard;
+! Soft group
+вишн IDeclSoft;
+змій IDeclSoft;
+мрій IDeclSoft;
+! Mixed group
+круч IDeclMixed;
+веж IDeclMixed;
+! Special cases
+! singular form is declines as the hard group, but
+! in plural form -ин- is removed and is declined specifically
+люд IDeclSpec; 
+дит IDeclSpec;
 
-LEXICON Verb
+LEXICON IDeclHard
++N+IDecl+Hard+Nom:^а #;
++N+IDecl+Hard+Gen:^и #;
++N+IDecl+Hard+Dat:^і #;
++N+IDecl+Hard+Acc:^у #;
++N+IDecl+Hard+Ins:^ою #;
++N+IDecl+Hard+Loc:^і #;
++N+IDecl+Hard+Voc:^о #;
+IDeclHardPl ;
 
+LEXICON IDeclSoft
++N+IDecl+Soft+Nom:@P.SOFT.ON@^я #;
++N+IDecl+Soft+Gen:@P.SOFT.ON@^і #;
++N+IDecl+Soft+Dat:@P.SOFT.ON@^і #;
++N+IDecl+Soft+Acc:@P.SOFT.ON@^ю #;
++N+IDecl+Soft+Ins:@P.SOFT.ON@^ею #;
++N+IDecl+Soft+Loc:@P.SOFT.ON@^і #;
++N+IDecl+Soft+Voc:@P.SOFT.ON@^е #;
+! IDeclSoftPl ;
 
-LEXICON Ninf
-+N+Sg:^а #;
-+N+Pl:^и #;
+LEXICON IDeclMixed
++N+IDecl+Mixed+Nom:^а #;
++N+IDecl+Mixed+Gen:^і #;
++N+IDecl+Mixed+Dat:^і #;
++N+IDecl+Mixed+Acc:^у #;
++N+IDecl+Mixed+Ins:^ею #;
++N+IDecl+Mixed+Loc:^і #;
++N+IDecl+Mixed+Voc:^е #;
+IDeclMixedPl ;
+
+LEXICON IDeclSpec
++N+IDecl+Spec+Nom:ин^а #;
++N+IDecl+Spec+Gen:ин^и #;
++N+IDecl+Spec+Dat:ин^і #;
++N+IDecl+Spec+Acc:ин^у #;
++N+IDecl+Spec+Ins:ин^ою #;
++N+IDecl+Spec+Loc:ин^і #;
++N+IDecl+Spec+Voc:ин^о #;
+IDeclSpecPl ;
+
+LEXICON IDeclHardPl
++N+IDecl+Hard+Nom+Pl:^и #;
++N+IDecl+Hard+Gen+Pl:@P.PLGEN.ON@^0 #;
++N+IDecl+Hard+Dat+Pl:^ам #;
++N+IDecl+Hard+Acc+Pl:^и #;
++N+IDecl+Hard+Ins+Pl:^ами #;
++N+IDecl+Hard+Loc+Pl:^ах #;
++N+IDecl+Hard+Voc+Pl:^и #;
+
+LEXICON IDeclSoftPl
++N+IDecl+Soft+Nom+Pl:^і #;
++N+IDecl+Soft+Gen+Pl:^0 #;
++N+IDecl+Soft+Dat+Pl:^ям #;
++N+IDecl+Soft+Acc+Pl:^і #;
++N+IDecl+Soft+Ins+Pl:^ями #;
++N+IDecl+Soft+Loc+Pl:^ях #;
++N+IDecl+Soft+Voc+Pl:^і #;
+
+LEXICON IDeclMixedPl
++N+IDecl+Mixed+Nom+Pl:^і #;
++N+IDecl+Mixed+Gen+Pl:^0 #;
++N+IDecl+Mixed+Dat+Pl:^ам #;
++N+IDecl+Mixed+Acc+Pl:^і #;
++N+IDecl+Mixed+Ins+Pl:^ами #;
++N+IDecl+Mixed+Loc+Pl:^ах #;
++N+IDecl+Mixed+Voc+Pl:^і #;
+
+LEXICON IDeclSpecPl
++N+IDecl+Spec+Nom+Pl:^и #;
++N+IDecl+Spec+Gen+Pl:^ей #;
++N+IDecl+Spec+Dat+Pl:^ям #;
++N+IDecl+Spec+Acc+Pl:^ей #;
++N+IDecl+Spec+Ins+Pl:ь^ми #;
++N+IDecl+Spec+Loc+Pl:^ях #;
++N+IDecl+Spec+Voc+Pl:^и #;
